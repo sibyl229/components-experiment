@@ -1,0 +1,19 @@
+.app {
+  background-color: green;
+  height: 50px;
+  border: 1px solid blue;
+}
+
+.bap {
+  background-color: red;
+  height: 25px;
+}
+
+p {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+}
+
+body {
+	margin: 0;
+}
