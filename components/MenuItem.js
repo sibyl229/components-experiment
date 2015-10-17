@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardHeader, CardMedia, CardTitle, CardText, CardActions, FlatButton } from 'material-ui';
+import { MenuItem as MUMenuItem } from 'material-ui';
 
 
 
@@ -31,9 +31,8 @@ export default class MenuItem extends Component {
     const style = {};
 
     return (
-      <div style={{...style,...this.props.style}}>
-        <li onMouseOver={this._handleMouseOver} onMouseOut={this._handleMouseOut}>{ this.props.label }</li>
-      </div>);
+        <MUMenuItem style={{...style,...this.props.style}} onMouseOver={this._handleMouseOver} onMouseOut={this._handleMouseOut} primaryText={ this.props.label }/>
+    );
   }
 
 }

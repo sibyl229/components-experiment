@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Card, CardHeader, CardMedia, CardTitle, CardText, CardActions, FlatButton } from 'material-ui';
 import { getImageUrl } from '../utils';
 import MenuList from './MenuList';
+//import styles from './SideMenu.css';
 
 
 export default class SideMenu extends Component {
@@ -38,17 +39,21 @@ export default class SideMenu extends Component {
     };
 
     return (
-      <div style={{...style,...this.props.style}} >
-        <div>
+      <div className="Grid" style={{...style,...this.props.style}} >
+        <div className="GridCell">
           <MenuList menuID="primary"
+                    level={0}
                     onSubmenuRequest={this.showMenuList}
                     onSubmenuCancel={this.hideMenuList}/>
         </div>
-        <div>
+        <div className="GridCell">
         {
-          console.log(this.state) || this.state[1] ? <MenuList menuID={this.state[1]}
-                                        onSubmenuRequest={this.showMenuList}
-                                        onSubmenuCancel={this.hideMenuList}/> : null
+          console.log(this.state) || this.state[1]
+            ? <MenuList menuID={this.state[1]}
+                        level={1}
+                        onSubmenuRequest={this.showMenuList}
+                        onSubmenuCancel={this.hideMenuList}/>
+            : null
         }
         </div>
       </div>);
