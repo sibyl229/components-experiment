@@ -9,7 +9,8 @@ export default {
     }],
   secondaryA: [
     {
-      label: 'AA1'
+      label: 'AA1',
+      child: 'AAA1'
     },
     {
       label: 'AA2'
@@ -21,6 +22,11 @@ export default {
     },
     {
       label: 'BB2'
+    }
+  ],
+  AAA1: [
+    {
+      label: 'AAA1-1'
     }
   ]
 }
