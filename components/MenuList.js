@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { List, ListItem, Card, CardHeader, CardMedia, CardTitle, CardText, CardActions, FlatButton } from 'material-ui';
 import menuData from './menuData';
 //import MenuItem from './MenuItem';
+const MyRawTheme = require('../app/theme.js');
 
 
 export default class MenuList extends Component {
@@ -26,12 +27,17 @@ export default class MenuList extends Component {
 
   render() {
     const style = {
+      position: "absolute",
+      left: this.props.level * 200,
+      borderStyle: "solid",
+      borderWidth: "1px 1px 1px 0",
+      borderColor: MyRawTheme.palette.borderColor,
       width: "200px"
     };
 
     return (
-      <div style={{...style,...this.props.style}} id={ this.props["project/id"] }>
-        <List className={ this.props.menuID }>
+      <div>
+        <List style={{...style,...this.props.style}} className={ this.props.menuID }>
         {
           menuData[this.props.menuID].map((menuEntry) => {
             return (<ListItem
@@ -43,6 +49,7 @@ export default class MenuList extends Component {
           })
         }
         </List>
+
       </div>);
   }
 
